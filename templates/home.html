@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+    <div class="bg-gray-100 rounded-lg shadow-lg p-10 max-w-2xl w-full">
+        <h1 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Diabetes Prediction</h1>
+        <form action="{{ url_for('predict_datapoint') }}" method="post" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label for="Pregnancies" class="text-lg font-medium text-gray-700">Pregnancies</label>
+                    <input type="text" id="Pregnancies" name="Pregnancies" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="Glucose" class="text-lg font-medium text-gray-700">Glucose</label>
+                    <input type="text" id="Glucose" name="Glucose" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="BloodPressure" class="text-lg font-medium text-gray-700">Blood Pressure</label>
+                    <input type="text" id="BloodPressure" name="BloodPressure" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="SkinThickness" class="text-lg font-medium text-gray-700">Skin Thickness</label>
+                    <input type="text" id="SkinThickness" name="SkinThickness" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="Insulin" class="text-lg font-medium text-gray-700">Insulin</label>
+                    <input type="text" id="Insulin" name="Insulin" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="BMI" class="text-lg font-medium text-gray-700">BMI</label>
+                    <input type="text" id="BMI" name="BMI" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="DiabetesPedigreeFunction" class="text-lg font-medium text-gray-700">Diabetes Pedigree Function</label>
+                    <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+                <div class="flex flex-col">
+                    <label for="Age" class="text-lg font-medium text-gray-700">Age</label>
+                    <input type="text" id="Age" name="Age" required
+                        class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-500 bg-gray-50" />
+                </div>
+            </div>
+            <button type="submit"
+                class="w-full py-3 mt-8 bg-gray-700 text-white font-bold text-lg rounded-lg hover:bg-gray-800 transition duration-300">
+                Predict
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>

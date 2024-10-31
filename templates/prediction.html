@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg shadow-lg p-10 max-w-2xl w-full text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8">Prediction Result</h1>
+        
+        {% if result == 'Diabetic' %}
+        <div class="diabetic">
+            <img src="{{ url_for('static', filename='photos/sad.png.jpg') }}" alt="Sad Image" class="w-64 mx-auto mb-8">
+            <p class="text-xl text-red-600">
+                You have a high chance of being diabetic. It's crucial to adopt a healthier lifestyle to manage your health better.
+            </p>
+        </div>
+        {% else %}
+        <div class="non-diabetic">
+            <img src="{{ url_for('static', filename='photos/happy.png') }}" alt="Happy Image" class="w-64 mx-auto mb-8">
+            <p class="text-xl text-green-600">
+                You are not diabetic. Keep up the good work and continue leading a healthy lifestyle!
+            </p>
+        </div>
+        {% endif %}
+        
+        <a href="{{ url_for('predict_datapoint') }}" class="mt-8 inline-block py-3 px-6 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition duration-300">
+            Make Another Prediction
+        </a>
+    </div>
+</body>
+
+</html>
